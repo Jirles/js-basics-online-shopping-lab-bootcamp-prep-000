@@ -44,10 +44,14 @@ function total() {
 }
 
 function removeFromCart(item) {
-  
-  if (item in cart) {
+  for (var i = 0; i < cart.length; i++){
+    if (cart[i].hasOwnProperty(item)){
+      cart.pop(cart[i])
+    } else {
     return "That item is not in your cart."
+    }
   }
+  return cart 
 }
 
 function placeOrder(cardNumber) {
