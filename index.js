@@ -10,7 +10,6 @@ function setCart(c) {
 }
 
 function addToCart(item) {
-  //the word item is being passed in instead of the string argument
  cart.push({[item]: (Math.floor(Math.random() * 100))})
  console.log(`${item} has been added to your cart.`)
  return cart
@@ -46,7 +45,7 @@ function total() {
 
 function removeFromCart(item) {
   for (var i = 0; i < cart.length; i++){
-    if (cart[i].hasOwnProperty(item) === true){
+    if (cart[i].hasOwnProperty(item)){
       cart.pop(cart[i])
       return cart 
     }
@@ -59,7 +58,7 @@ function placeOrder(cardNumber) {
   if (!cardNumber){
     console.log("Sorry, we don't have a credit card on file for you.")
   } else {
-    cart = []
     console.log(`Your total cost is $${total()}, which will be charged to the cart ${cardNumber}.`)
+    cart = []
   }
 }
