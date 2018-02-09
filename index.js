@@ -31,7 +31,8 @@ function viewCart() {
       } else {
         message += ` ${Object.keys(cart[i])} at $${cart[i][Object.keys(cart[i])]},`
       }
-    } console.log(message)
+    } 
+    console.log(message)
   }
 }
 
