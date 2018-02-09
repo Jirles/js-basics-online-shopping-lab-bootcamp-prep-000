@@ -10,6 +10,7 @@ function setCart(c) {
 }
 
 function addToCart(item) {
+  //the word item is being passed in instead of the string argument
  cart.push({item: Math.floor(Math.random() * 10)})
  console.log(`${item} has been added to your cart.`)
  return cart
