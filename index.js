@@ -19,7 +19,7 @@ function viewCart() {
   if (cart.length === 0){
     return "Your shopping cart is empty."
   } else if (cart.length === 1){
-    return `In your cart, you have ${} at $${}.`
+    return `In your cart, you have ${Object.key(cart[0])} at $${cart[0][Object.key(cart[0])]}.`
   } else if (cart.length === 2){
     return `In your cart, you have ${} at $${} and ${} at $${}.`
   } else {
