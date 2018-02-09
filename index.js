@@ -20,16 +20,16 @@ function viewCart() {
   if (cart.length === 0){
     return "Your shopping cart is empty."
   } else if (cart.length === 1){
-    return `In your cart, you have ${Object.key(cart[0])} at $${cart[0][Object.key(cart[0])]}.`
+    return `In your cart, you have ${Object.keys(cart[0])} at $${cart[0][Object.keys(cart[0])]}.`
   } else if (cart.length === 2){
-    return `In your cart, you have ${Object.key(cart[0])} at $${cart[0][Object.key(cart[0])]} and ${Object.key(cart[1])} at $${cart[1][Object.key(cart[1])]}.`
+    return `In your cart, you have ${Object.keys(cart[0])} at $${cart[0][Object.keys(cart[0])]} and ${Object.keys(cart[1])} at $${cart[1][Object.keys(cart[1])]}.`
   } else {
     var message = 'In your cart, you have'
     for (var i = 0; i < cart.length; i++) {
       if (i === cart.length - 1) {
-        message += ` and ${Object.key(cart[i])} at $${cart[i][Object.key(cart[i])]}.`
+        message += ` and ${Object.keys(cart[i])} at $${cart[i][Object.keys(cart[i])]}.`
       } else {
-        message += ` ${Object.key(cart[i])} at $${cart[i][Object.key(cart[i])]},`
+        message += ` ${Object.keys(cart[i])} at $${cart[i][Object.keys(cart[i])]},`
       }
     }
     return message
@@ -48,11 +48,12 @@ function removeFromCart(item) {
   for (var i = 0; i < cart.length; i++){
     if (cart[i].hasOwnProperty(item) === true){
       cart.pop(cart[i])
+      return cart 
     } else {
       console.log("That item is not in your cart.")
+      return cart
     }
   }
-  return cart 
 }
 
 function placeOrder(cardNumber) {
