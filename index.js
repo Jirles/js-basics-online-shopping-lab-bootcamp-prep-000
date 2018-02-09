@@ -44,6 +44,7 @@ function total() {
 }
 
 function removeFromCart(item) {
+  
   if (item in cart) {
     return "That item is not in your cart."
   }
