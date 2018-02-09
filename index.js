@@ -21,7 +21,7 @@ function viewCart() {
   } else if (cart.length === 1){
     return `In your cart, you have ${Object.key(cart[0])} at $${cart[0][Object.key(cart[0])]}.`
   } else if (cart.length === 2){
-    return `In your cart, you have ${} at $${} and ${} at $${}.`
+    return `In your cart, you have ${Object.key(cart[0])} at $${cart[0][Object.key(cart[0])]} and ${Object.key(cart[1])} at $${}.`
   } else {
     return
   }
