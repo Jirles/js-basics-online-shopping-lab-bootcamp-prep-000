@@ -18,11 +18,11 @@ function addToCart(item) {
 
 function viewCart() {
   if (cart.length === 0){
-    return "Your shopping cart is empty."
+    console.log("Your shopping cart is empty.")
   } else if (cart.length === 1){
-    return `In your cart, you have ${Object.keys(cart[0])} at $${cart[0][Object.keys(cart[0])]}.`
+    console.log(`In your cart, you have ${Object.keys(cart[0])} at $${cart[0][Object.keys(cart[0])]}.`)
   } else if (cart.length === 2){
-    return `In your cart, you have ${Object.keys(cart[0])} at $${cart[0][Object.keys(cart[0])]} and ${Object.keys(cart[1])} at $${cart[1][Object.keys(cart[1])]}.`
+    console.log(`In your cart, you have ${Object.keys(cart[0])} at $${cart[0][Object.keys(cart[0])]} and ${Object.keys(cart[1])} at $${cart[1][Object.keys(cart[1])]}.`)
   } else {
     var message = 'In your cart, you have'
     for (var i = 0; i < cart.length; i++) {
@@ -31,9 +31,8 @@ function viewCart() {
       } else {
         message += ` ${Object.keys(cart[i])} at $${cart[i][Object.keys(cart[i])]},`
       }
-    }
+    } console.log(message)
   }
-  console.log(message)
 }
 
 function total() {
